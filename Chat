@@ -1,0 +1,58 @@
+import React, { Component } from "react";
+import TextField from "../TextField";
+import Button from "../Button";
+import "./Chat.css";
+import MessageList from "./MessageList";
+
+export default class Chat extends Component {
+  constructor() {
+    super();
+    this.state = {
+      messages: [],
+      msgText: "",
+      username: "admin"
+    };
+    this.sendMsg = this.sendMsg.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange = event => {
+    const value = event.target.value;
+    this.setState({
+      msgText: value
+    });
+  };
+
+  sendMsg() {
+    if (this.state.msgText === "") {
+      return;
+    }
+    const newMsg = {
+      text: this.state.msgText,
+      username: this.state.username
+    };
+    this.state.messages.push(newMsg);
+
+    this.setState({
+      msgText: ""
+    });
+  }
+  render() {
+    return (
+      <div className="chat-wrap">
+        <MessageList data={this.state.messages} />
+        <div className="chat-footer">
+          <div className="chat-footer-left">
+            <TextField
+              onChange={this.handleChange}
+              value={this.state.msgText}
+              size="cover"
+            />
+          </div>
+          <div className="chat-footer-right">
+            <Button onClick={this.sendMsg}>Отправить</Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
