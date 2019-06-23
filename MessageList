@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+
+export default class MessageList extends Component {
+  constructor(data) {
+    super();
+    this.state = {
+      status: 0,
+      username: "admin"
+    };
+  }
+  render() {
+    const data = this.props.data;
+    return (
+      <ul className="chat">
+        {data.map((msg, id) => {
+          return (
+            <li
+              className={
+                this.state.username === msg.username ? "msg-out" : "msg-in"
+              }
+              key={id}
+            >
+              {msg.text}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+}
