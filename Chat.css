@@ -1,0 +1,44 @@
+.chat-wrap {
+  max-width: 80%;
+  min-width: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  background: #d9fcdd;
+}
+
+.chat {
+  height: 500px;
+  width: 100%;
+}
+
+.chat-footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.chat-footer-left {
+  width: 90%;
+  height: 100%;
+}
+
+.chat-footer-left > input {
+  height: inherit;
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.chat-footer-right {
+  height: 100%;
+  width: 10%;
+}
+
+.chat-footer-right > button {
+  height: inherit;
+  width: 100%;
+}
