@@ -1,0 +1,20 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "./Header";
+import Navigation from "./Navigation";
+import "./styles.css";
+import Chat from "./chat/Chat";
+
+function App() {
+  return (
+    <div className="App">
+      <Header>
+        <Navigation items={["Главная", "Чат", "Профиль"]} />
+      </Header>
+      <Chat />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
