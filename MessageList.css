@@ -1,0 +1,28 @@
+.chat {
+  overflow: auto;
+}
+
+.chat > li {
+  width: 70%;
+  border-radius: 5px;
+  padding: 9px 24px;
+  color: #0a0808;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  word-break: break-all;
+  margin: 10px 5px;
+}
+
+.msg-out {
+  float: right;
+  background: #7cf78c;
+  text-align: right;
+  justify-content: flex-end;
+}
+.msg-in {
+  float: left;
+  background: #b6afaf;
+  text-align: left;
+  justify-content: flex-start;
+}
